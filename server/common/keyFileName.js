@@ -1,4 +1,4 @@
 import dotenv from "dotenv";
 dotenv.config();
 
-export const keyFilename = process.env.SERVICE_ACCOUNT_FILE || "";
+export const keyFilename = "google-api-credentials.json";

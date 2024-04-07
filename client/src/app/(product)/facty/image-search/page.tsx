@@ -84,7 +84,8 @@ const ImageSearch: React.FC = () => {
             Upload an image search from a pre-trained data set
           </h3>
           <h1 className="dark:text-cyan-400 text-blue-950 font-semibold">
-            There are two trained data sets as of now : industry and food_id
+            There are three trained data sets as of now : industry, food and
+            homegoods.
           </h1>
         </div>
         <div className="mt-12 mx-auto dark:text-white sm:max-w-lg sm:rounded-xl w-full">
@@ -101,6 +102,15 @@ const ImageSearch: React.FC = () => {
               <SelectItem value="home_goods">Home Goods</SelectItem>
             </SelectContent>
           </Select>
+        </div>
+        <div className="mt-12 mx-auto dark:text-white sm:max-w-lg sm:rounded-xl w-full">
+          {productSetId === "industry"
+            ? "Search from a data set of selected industrial drawings"
+            : productSetId === "food_id"
+            ? "Search from a data set of selected food items (roasted fish, roasted chicken, fresh apple, fresh banana and fresh orange)"
+            : productSetId === "home_goods"
+            ? "Search from a data set of selected home goods(tv, fan,  light bulb, sofa, bed, table, chair, washing machine, desk and refrigerator)"
+            : null}
         </div>
         <div className="mt-12 mx-auto h-[140px] dark:bg-gray-700 bg-[#f3f3f1] sm:max-w-lg sm:rounded-xl cursor-pointer">
           <CustomDropzone

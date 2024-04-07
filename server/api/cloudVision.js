@@ -231,6 +231,20 @@ export const deleteProduct = async (productId) => {
   console.log(`Product deleted.`);
 };
 
+export const deleteReferenceImg = async (productId, referenceImageId) => {
+  const referenceImagePath = searchClient.referenceImagePath(
+    projectId,
+    location,
+    productId,
+    referenceImageId
+  );
+  const request = {
+    name: referenceImagePath,
+  };
+  await searchClient.deleteReferenceImage(request);
+  console.log(`Reference Image deleted.`);
+};
+
 export const similarProductSearch = async (
   productSetId,
   productCategory,

@@ -7,6 +7,7 @@ import {
   createReferenceImage,
   deleteProduct,
   deleteProductSet,
+  deleteReferenceImg,
   getProductSets,
   getProductsInAProductSet,
   getReferenceImage,
@@ -343,6 +344,19 @@ export const deleteProductSetController = async (req, res) => {
     return res
       .status(200)
       .json({ message: "Product Set deleted successfully" });
+  } catch (error) {
+    console.log(error);
+    return res.status(500).json({ message: error.message });
+  }
+};
+
+export const deleteReferenceImageController = async (req, res) => {
+  try {
+    const { productId, referenceImageId } = req.body;
+    await deleteReferenceImg(productId, referenceImageId);
+    return res
+      .status(200)
+      .json({ message: "Reference Image deleted successfully" });
   } catch (error) {
     console.log(error);
     return res.status(500).json({ message: error.message });

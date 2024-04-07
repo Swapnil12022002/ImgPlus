@@ -8,6 +8,7 @@ import {
   createReferenceImageController,
   deleteProductController,
   deleteProductSetController,
+  deleteReferenceImageController,
   getProductSetsController,
   getProductsInAProductSetController,
   getReferenceImageController,
@@ -35,6 +36,7 @@ router
 router.route("/get-product").get(getSingleProductController);
 router.route("/get-ref-img").get(getReferenceImageController);
 router.route("/delete-product").delete(deleteProductController);
+router.route("/delete-ref").delete(deleteReferenceImageController);
 router
   .route("/image-search")
   .post(upload.single("file"), imageSearchController);
