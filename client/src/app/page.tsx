@@ -30,9 +30,12 @@ export default function Home() {
               Providing image searching and recognition services for your
               specific needs.
             </h2>
-            <p className="max-w-2xl mx-auto text-gray-400">
-              Sed ut perspiciatis unde omnis iste natus voluptatem accusantium
-              doloremque laudantium, totam rem aperiam, eaque ipsa quae.
+            <p className="max-w-2xl mx-auto dark:text-gray-400">
+              Empower your application with tailored image searching and
+              recognition solutions, designed to meet your unique requirements.
+              Unlock the potential of advanced image analysis capabilities
+              customized to your specific needs with our comprehensive service
+              offerings.
             </p>
           </div>
           <Link href="/facty" className="flex justify-center items-center mt-5">
