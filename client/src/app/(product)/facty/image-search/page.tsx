@@ -180,26 +180,29 @@ const ImageSearch: React.FC = () => {
           responseArray?.length > 0 &&
           !responseLoading &&
           !file &&
-          responseArray.map((item, index) => (
-            <Card
-              key={index}
-              className="flex flex-col justify-center max-w-[500px] items-center gap-2"
-            >
-              <div className="flex justify-center items-center">
-                <p className="text-lg font-semibold dark:text-cyan-400 text-blue-950">
-                  Similarity : {Math.round(item.score * 100)}%{" "}
-                </p>
-              </div>
-              <Image
-                src={item.matchedImage}
-                alt="product"
-                width={500}
-                height={500}
-                style={{ width: 500, height: 500 }}
-                priority={true}
-              />
-            </Card>
-          ))
+          responseArray.map(
+            (item, index) =>
+              index === 0 && (
+                <Card
+                  key={index}
+                  className="flex flex-col justify-center max-w-[500px] items-center gap-2"
+                >
+                  <div className="flex justify-center items-center">
+                    <p className="text-lg font-semibold dark:text-cyan-400 text-blue-950">
+                      Similarity : {Math.round(item.score * 100)}%{" "}
+                    </p>
+                  </div>
+                  <Image
+                    src={item.matchedImage}
+                    alt="product"
+                    width={500}
+                    height={500}
+                    style={{ width: 500, height: 500 }}
+                    priority={true}
+                  />
+                </Card>
+              )
+          )
         )}
       </div>
       <div
